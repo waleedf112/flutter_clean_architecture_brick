@@ -1,5 +1,5 @@
-import '../../core/dependency_injection/dependency_injection.dart';
-import '../../core/error/failure.dart';
+import '../../../core/dependency_injection/dependency_injection.dart';
+import '../../../core/error/failure.dart';
 import '../models/{{feture_name.snakeCase()}}_model.dart';
 
 abstract class {{feture_name.pascalCase()}}{{datasource.pascalCase()}}DataSource {

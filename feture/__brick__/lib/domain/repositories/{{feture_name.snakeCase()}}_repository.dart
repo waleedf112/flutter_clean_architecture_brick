@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../core/error/failure.dart';
+import '../../../core/error/failure.dart';
 import '../entities/{{feture_name.snakeCase()}}_entity.dart';
 import '../usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
 

@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 
 import '../../../../../core/usecases/usecase.dart';
 import '../../../core/error/failure.dart';
-import '../../../domain/entities/{{feture_name.snakeCase()}}_entity.dart';
-import '../../../domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
+import '../../../lib/domain/entities/{{feture_name.snakeCase()}}_entity.dart';
+import '../../../lib/domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
 
 part '{{feture_name.snakeCase()}}_event.dart';
 part '{{feture_name.snakeCase()}}_state.dart';
