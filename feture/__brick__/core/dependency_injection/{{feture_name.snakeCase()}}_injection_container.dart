@@ -1,8 +1,8 @@
-import '../../data/datasources/{{feture_name.snakeCase()}}_{{datasource.snakeCase()}}_data_source.dart';
-import '../../data/repositories/{{feture_name.snakeCase()}}_repository_impl.dart';
-import '../../domain/repositories/{{feture_name.snakeCase()}}_repository.dart';
-import '../../domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
-import '../../presentation/blocs/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_bloc.dart';
+import '../../../data/datasources/{{feture_name.snakeCase()}}_{{datasource.snakeCase()}}_data_source.dart';
+import '../../../data/repositories/{{feture_name.snakeCase()}}_repository_impl.dart';
+import '../../../domain/repositories/{{feture_name.snakeCase()}}_repository.dart';
+import '../../../domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
+import '../../../presentation/blocs/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_bloc.dart';
 import 'dependency_injection.dart';
 
 abstract class {{feture_name1.pascalCase()}}InjectionContainer {
