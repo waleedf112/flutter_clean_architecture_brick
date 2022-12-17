@@ -33,5 +33,9 @@ void run(HookContext context) {
     vars['usecases'][i]['return_model'] ??= 'void';
     vars['usecases'][i]['stream'] ??= false;
   }
+  for (int i = 0; i < vars['states'].length; i++) {
+    vars['states'][i]['contains_model'] ??= false;
+    vars['states'][i]['has_params'] = vars['states'][i]['params']?.isNotEmpty ?? false || vars['states'][i]['contains_model'];
+  }
   context.vars = vars;
 }
