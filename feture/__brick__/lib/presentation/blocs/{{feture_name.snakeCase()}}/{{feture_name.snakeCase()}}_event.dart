@@ -4,7 +4,7 @@ abstract class {{feture_name.pascalCase()}}Event extends Equatable {
   const {{feture_name.pascalCase()}}Event();
 
   @override
-  List<Object> get props => [];
+  List get props => [];
 }
 {{#usecases}}
 class {{usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Event extends {{feture_name.pascalCase()}}Event {
@@ -15,7 +15,7 @@ class {{usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Event extends {{f
     {{/params}}
   }{{/has_params}});
   {{#has_params}}@override
-  List<Object> get props => [
+  List<Object{{#has_nullables}}?{{/has_nullables}}> get props => [
     {{#params}}{{param_name}},
     {{/params}}
   ];{{/has_params}}

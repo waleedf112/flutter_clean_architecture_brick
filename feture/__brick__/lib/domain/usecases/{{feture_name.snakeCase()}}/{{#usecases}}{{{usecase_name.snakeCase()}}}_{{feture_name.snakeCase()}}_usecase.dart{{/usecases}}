@@ -6,8 +6,8 @@ class {{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Usecase 
   {{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Usecase({required this.repository});
 
   @override
-  {{#usecases.stream}}Stream<{{usecases.return}}>{{/usecases.stream}}{{^usecases.stream}}Future<Either<Failure, {{usecases.return}}>>{{/usecases.stream}} call({{#usecases.has_params}}{{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Params{{/usecases.has_params}}{{^usecases.has_params}}NoParams{{/usecases.has_params}} params) async {
-    return await repository.{{usecases.usecase_name.camelCase()}}{{feture_name.pascalCase()}}({{#usecases.has_params}}params{{/usecases.has_params}});
+  {{#usecases.stream}}Stream<{{usecases.return}}>{{/usecases.stream}}{{^usecases.stream}}Future<Either<Failure, {{usecases.return}}>>{{/usecases.stream}} call({{#usecases.has_params}}{{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Params{{/usecases.has_params}}{{^usecases.has_params}}NoParams{{/usecases.has_params}} params) {{^usecases.stream}}async{{/usecases.stream}} {
+    return {{^usecases.stream}}await {{/usecases.stream}}repository.{{usecases.usecase_name.camelCase()}}({{#usecases.has_params}}params{{/usecases.has_params}});
   }
 }
 {{#usecases.has_params}}
@@ -20,7 +20,7 @@ class {{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Params e
     }) : super();
 
   @override
-  List<Object> get props => [
+  List<Object{{#usecases.has_nullables}}?{{/usecases.has_nullables}}> get props => [
     {{#usecases.params}}{{param_name}},
     {{/usecases.params}}];
 }

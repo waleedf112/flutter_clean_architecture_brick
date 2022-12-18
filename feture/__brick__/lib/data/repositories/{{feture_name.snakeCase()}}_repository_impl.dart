@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 
-import '../datasources/core/error/failure.dart';
-import '../datasources/domain/entities/{{feture_name.snakeCase()}}_entity.dart';
-import '../datasources/domain/repositories/{{feture_name.snakeCase()}}_repository.dart';
-import '../datasources/domain/usecases/partnership/{{feture_name.snakeCase()}}_usecases.dart';
+import '../../core/error/failure.dart';
+import '../../domain/entities/{{feture_name.snakeCase()}}_entity.dart';
+import '../../domain/repositories/{{feture_name.snakeCase()}}_repository.dart';
+import '../../domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
 import '../datasources/{{feture_name.snakeCase()}}_{{datasource.snakeCase()}}_data_source.dart';
 import '../models/{{feture_name.snakeCase()}}_model.dart';
 

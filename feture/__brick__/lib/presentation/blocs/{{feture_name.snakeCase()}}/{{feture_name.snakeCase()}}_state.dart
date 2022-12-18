@@ -25,7 +25,7 @@ abstract class {{feture_name.pascalCase()}}State extends Equatable {
   {{/has_params}}{{^has_params}}factory {{feture_name.pascalCase()}}State.{{state_name.camelCase()}}() => const {{state_name.pascalCase()}}{{feture_name.pascalCase()}}State();
   {{/has_params}}{{/states}}
   @override
-  List<Object> get props => [{{feture_name.camelCase()}}, currentState];
+  List get props => [{{feture_name.camelCase()}}, currentState];
 }
 {{#states}}
 class {{state_name.pascalCase()}}{{feture_name.pascalCase()}}State extends {{feture_name.pascalCase()}}State {
@@ -40,7 +40,7 @@ class {{state_name.pascalCase()}}{{feture_name.pascalCase()}}State extends {{fet
         );
 
   {{#has_params}}@override
-  List<Object> get props => [
+  List<Object{{#has_nullables}}?{{/has_nullables}}> get props => [
     {{feture_name.camelCase()}},
     currentState,
     {{#params}}{{param_name.camelCase()}},

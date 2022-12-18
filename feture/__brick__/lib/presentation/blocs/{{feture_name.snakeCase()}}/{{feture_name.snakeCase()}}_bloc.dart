@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 
 import '../../../../../core/usecases/usecase.dart';
 import '../../../core/error/failure.dart';
-import '../../../lib/domain/entities/{{feture_name.snakeCase()}}_entity.dart';
-import '../../../lib/domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
+import '../../../domain/entities/{{feture_name.snakeCase()}}_entity.dart';
+import '../../../domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_usecases.dart';
 
 part '{{feture_name.snakeCase()}}_event.dart';
 part '{{feture_name.snakeCase()}}_state.dart';
@@ -25,13 +25,14 @@ class {{feture_name.pascalCase()}}Bloc extends Bloc<{{feture_name.pascalCase()}}
       {{usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Event event,
       Emitter<{{feture_name.pascalCase()}}State> emit,
     ) async {
-      {{#stream}}return emit.forEach<Partnership>(
+      {{#stream}}return emit.forEach<{{return.pascalCase()}}>(
         {{usecase_name.camelCase()}}{{feture_name.pascalCase()}}Usecase({{#has_params}}{{usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Params(
         {{#params}}{{param_name}}: event.{{param_name}},
         {{/params}}
       ){{/has_params}}{{^has_params}}NoParams(){{/has_params}}),
         onData: ({{feture_name.camelCase()}}) {
           /// TODO: implement [{{feture_name.camelCase()}}] handling.
+          throw UnimplementedError();
         },
         onError: (error, stackTrace) {
           final Failure failure;
@@ -52,9 +53,11 @@ class {{feture_name.pascalCase()}}Bloc extends Bloc<{{feture_name.pascalCase()}}
       result.fold(
         (failure) {
           ///TODO: implement [failure] handling.
+          throw UnimplementedError();
         },
         ({{feture_name.camelCase()}}) {
           ///TODO: implement [{{feture_name.camelCase()}}] handling.
+          throw UnimplementedError();
         },
       );
       if(state is ErrorState) emit(originalState);{{/stream}}
