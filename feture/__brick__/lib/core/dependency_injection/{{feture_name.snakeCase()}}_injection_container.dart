@@ -5,7 +5,7 @@ import '../../../../domain/usecases/{{feture_name.snakeCase()}}/{{feture_name.sn
 import '../../../../presentation/blocs/{{feture_name.snakeCase()}}/{{feture_name.snakeCase()}}_bloc.dart';
 import 'dependency_injection.dart';
 
-abstract class {{feture_name1.pascalCase()}}InjectionContainer {
+abstract class {{feture_name.pascalCase()}}InjectionContainer {
   static void init() {
     sl.registerLazySingleton<{{feture_name.pascalCase()}}Bloc>(
       () => {{feture_name.pascalCase()}}Bloc({{#usecases}}
