@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class {{feture_name.pascalCase()}} extends Equatable {
-  {{#entity.entity_params}}final {{param_type}} {{param_name}};
+  {{#entity.entity_params}}final {{{param_type}}} {{param_name}};
   {{/entity.entity_params}}
   const {{feture_name.pascalCase()}}({
     {{#entity.entity_params}}required this.{{param_name}},

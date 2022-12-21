@@ -15,7 +15,7 @@ abstract class {{feture_name.pascalCase()}}State extends Equatable {
   });
   {{#states}}{{#has_params}}factory {{feture_name.pascalCase()}}State.{{state_name.camelCase()}}({
     {{#contains_model}}required {{feture_name.pascalCase()}} {{feture_name.camelCase()}},{{/contains_model}}
-    {{#params}}required {{param_type.pascalCase()}} {{param_name.camelCase()}},
+    {{#params}}required {{{param_type.pascalCase()}}} {{param_name.camelCase()}},
     {{/params}}
   }) => {{state_name.pascalCase()}}{{feture_name.pascalCase()}}State(
     {{#contains_model}}{{feture_name.camelCase()}}: {{feture_name.camelCase()}},{{/contains_model}}
@@ -29,7 +29,7 @@ abstract class {{feture_name.pascalCase()}}State extends Equatable {
 }
 {{#states}}
 class {{state_name.pascalCase()}}{{feture_name.pascalCase()}}State extends {{feture_name.pascalCase()}}State {
-  {{#params}}final {{param_type.pascalCase()}} {{param_name.camelCase()}};
+  {{#params}}final {{{param_type.pascalCase()}}} {{param_name.camelCase()}};
   {{/params}}
   const {{state_name.pascalCase()}}{{feture_name.pascalCase()}}State({{#has_params}}{
     {{#params}}required this.{{param_name.camelCase()}},{{/params}}

@@ -8,7 +8,7 @@ abstract class {{feture_name.pascalCase()}}Event extends Equatable {
 }
 {{#usecases}}
 class {{usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Event extends {{feture_name.pascalCase()}}Event {
-  {{#has_params}}{{#params}}final {{param_type}} {{param_name}};
+  {{#has_params}}{{#params}}final {{{param_type}}} {{param_name}};
   {{/params}}{{/has_params}}
   const {{usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Event({{#has_params}}{
     {{#params}}required this.{{param_name}},
