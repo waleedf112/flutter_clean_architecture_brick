@@ -12,7 +12,7 @@ class {{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Usecase 
 }
 {{#usecases.has_params}}
 class {{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Params extends Equatable {
-  {{#usecases.params}}final {{param_type}} {{param_name}};
+  {{#usecases.params}}final {{{param_type}}} {{param_name}};
   {{/usecases.params}}
   const {{usecases.usecase_name.pascalCase()}}{{feture_name.pascalCase()}}Params({
     {{#usecases.params}}required this.{{param_name}},
