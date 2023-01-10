@@ -1,5 +1,5 @@
 # Register bricks which can be consumed via the Mason CLI.
 # https://github.com/felangel/mason
 bricks:
-  feture:
-    path: ./feture/
+  feature:
+    path: ./feature/

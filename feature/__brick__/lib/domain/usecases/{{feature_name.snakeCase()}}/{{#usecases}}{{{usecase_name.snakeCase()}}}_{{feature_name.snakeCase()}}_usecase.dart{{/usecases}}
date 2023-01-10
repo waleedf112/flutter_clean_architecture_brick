@@ -1,0 +1,27 @@
+part of '{{feature_name.snakeCase()}}_usecases.dart';
+
+class {{usecases.usecase_name.pascalCase()}}{{feature_name.pascalCase()}}Usecase extends UseCase<{{usecases.return}}, {{#usecases.has_params}}{{usecases.usecase_name.pascalCase()}}{{feature_name.pascalCase()}}Params{{/usecases.has_params}}{{^usecases.has_params}}NoParams{{/usecases.has_params}}> {
+  final {{feature_name.pascalCase()}}Repository repository;
+
+  {{usecases.usecase_name.pascalCase()}}{{feature_name.pascalCase()}}Usecase({required this.repository});
+
+  @override
+  {{#usecases.stream}}Stream<{{usecases.return}}>{{/usecases.stream}}{{^usecases.stream}}Future<Either<Failure, {{usecases.return}}>>{{/usecases.stream}} call({{#usecases.has_params}}{{usecases.usecase_name.pascalCase()}}{{feature_name.pascalCase()}}Params{{/usecases.has_params}}{{^usecases.has_params}}NoParams{{/usecases.has_params}} params) {{^usecases.stream}}async{{/usecases.stream}} {
+    return {{^usecases.stream}}await {{/usecases.stream}}repository.{{usecases.usecase_name.camelCase()}}({{#usecases.has_params}}params{{/usecases.has_params}});
+  }
+}
+{{#usecases.has_params}}
+class {{usecases.usecase_name.pascalCase()}}{{feature_name.pascalCase()}}Params extends Equatable {
+  {{#usecases.params}}final {{{param_type}}} {{param_name}};
+  {{/usecases.params}}
+  const {{usecases.usecase_name.pascalCase()}}{{feature_name.pascalCase()}}Params({
+    {{#usecases.params}}required this.{{param_name}},
+    {{/usecases.params}}
+    }) : super();
+
+  @override
+  List<Object{{#usecases.has_nullables}}?{{/usecases.has_nullables}}> get props => [
+    {{#usecases.params}}{{param_name}},
+    {{/usecases.params}}];
+}
+{{/usecases.has_params}}
